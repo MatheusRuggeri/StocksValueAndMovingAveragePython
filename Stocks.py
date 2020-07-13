@@ -8,6 +8,7 @@ end = dt.datetime(2020,12,31)
 
 # Uses Panda Reader to import all the values from Yahoo API
 df = web.DataReader ('WEGE3.SA', 'yahoo', start, end)
+df.to_csv("export/WEGE3.csv")
 
 # Moving Average vector
 movingAverage = []
