@@ -1,7 +1,15 @@
 import datetime as dt
 import pandas_datareader.data as web
 import matplotlib.pyplot as plt
+import csv
 
+# Import the list with all stocks to be analyzed
+data = []
+with open('import/list.csv', newline='') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        data.append(row[0])
+    
 # Start and End dates
 start = dt.datetime(2017,7,1)
 end = dt.datetime(2020,12,31)
@@ -19,19 +27,20 @@ movingAverage.append(90);   color.append('m');
 movingAverage.append(180);  color.append('y');
 movingAverage.append(365);  color.append('b');
 
-
 # Moving Average
 for i in movingAverage:
     df[str(i)+'ma'] = df['Adj Close'].rolling(window=i).mean()
 
+# Create a new date column, this column accepts .tail or .head
 df['Date'] = df.index
 
 # Creates 2 subplots, the first with 5/6 height
 ax1 = plt.subplot2grid((6,1), (0,0), rowspan = 5, colspan = 1)
 ax2 = plt.subplot2grid((6,1), (5,0), rowspan = 1, colspan = 1, sharex=ax1)
 
-# Set the img size
-plt.gcf().set_size_inches(16, 10);
+# Set the img size and the title
+plt.gcf().set_size_inches(16, 10)
+plt.title('WEGE3', fontsize=25)
     
 # Creates a line to the price and put dots in each adjusted price
 ax1.plot(df['Date'].tail(365), df['Adj Close'].tail(365), 'r')
@@ -42,6 +51,7 @@ for i in movingAverage:
     ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex], label=str(i)+' M.A.')
     colorIndex += 1
 
+# Print the legend
 legend = ax1.legend(loc='upper center', shadow=True, fontsize='x-large')
 
 # Plot the volume in the small graphic below
