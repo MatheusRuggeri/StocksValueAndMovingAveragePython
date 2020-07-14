@@ -39,8 +39,10 @@ ax1.plot(df['Date'].tail(365), df['Adj Close'].tail(365), 'r.')
 
 colorIndex = 0
 for i in movingAverage:
-    ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex])
+    ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex], label=str(i)+' M.A.')
     colorIndex += 1
+
+legend = ax1.legend(loc='upper center', shadow=True, fontsize='x-large')
 
 # Plot the volume in the small graphic below
 ax2.bar(df['Date'].tail(365), df['Volume'].tail(365), color='b')
