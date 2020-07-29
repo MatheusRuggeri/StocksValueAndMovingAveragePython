@@ -17,6 +17,7 @@ end = dt.datetime(2020,12,31)
 for stocks in data:
     print(stocks)
     # Uses Panda Reader to import all the values from Yahoo API and save
+    # IMPORTANT: The          -----> '.SA' <-----   in the next line loads the value for Brazilian stocks, remove this to USA stocks
     df = web.DataReader (str(stocks)+'.SA', 'yahoo', start, end)
     df.to_csv("export/csv/" + stocks + ".csv")
     
