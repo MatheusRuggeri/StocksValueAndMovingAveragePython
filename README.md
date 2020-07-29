@@ -32,10 +32,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+  <p>
     This code just helps you to calculate all the moving averages faster and check how your investiments are going.
     <br />
     IMPORTANT: This code is set to Brazilian stock market, to check prices in USA, just remove '.SA' in line 20
-
+  </p>
+  
 ### Installation
 
 1. Install Webdriver and Selenium
