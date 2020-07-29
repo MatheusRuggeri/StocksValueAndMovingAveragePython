@@ -32,8 +32,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This code just helps you to calculate all the moving averages faster and check how your investiments are going.
-IMPORTANT: This code is set to Brazilian stock market, to check prices in USA, just remove '.SA' in line 20
+    This code just helps you to calculate all the moving averages faster and check how your investiments are going.
+    <br />
+    IMPORTANT: This code is set to Brazilian stock market, to check prices in USA, just remove '.SA' in line 20
 
 ### Installation
 
@@ -47,7 +48,9 @@ pip install datetime
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You have to change the file import/list.csv, put all the stocks that you want to check the price and save, each stock must be in a line, DO NOT use comma to split the list.
+    You have to change the file import/list.csv, put all the stocks that you want to check the price and save, each stock must be in a line.
+    <br />
+    DO NOT use comma to split the list.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
