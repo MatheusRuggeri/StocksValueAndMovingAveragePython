@@ -40,7 +40,7 @@
   
 ### Installation
 
-1. Install Webdriver and Selenium
+1. Install matplotlib, pandas-datareader and datetime
 ```sh
 pip install matplotlib
 pip install pandas-datareader
