@@ -50,9 +50,11 @@ pip install datetime
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+  <p>
     You have to change the file import/list.csv, put all the stocks that you want to check the price and save, each stock must be in a line.
     <br />
     DO NOT use comma to split the list.
+  </p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
