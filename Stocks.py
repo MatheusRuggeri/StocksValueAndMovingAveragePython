@@ -5,6 +5,7 @@ import csv
 
 # Import the list with all stocks to be analyzed
 data = []
+#with open('import/FIIs.csv', newline='') as f:
 with open('import/list.csv', newline='') as f:
     reader = csv.reader(f)
     for row in reader:
@@ -52,7 +53,11 @@ for stocks in data:
     
     colorIndex = 0
     for i in movingAverage:
-        ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex], label=str(i)+' M.A.')
+        if df[str(i)+'ma'][-1] >= df["Close"][-1]:
+            ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex], label=str(i)+' M.A. -')
+        else :
+            ax1.plot(df['Date'].tail(365), df[str(i)+'ma'].tail(365), color[colorIndex], label=str(i)+' M.A. +')
+            
         colorIndex += 1
     
     # Print the legend
