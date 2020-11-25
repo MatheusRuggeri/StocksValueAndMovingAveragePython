@@ -6,7 +6,7 @@ import csv
 # Import the list with all stocks to be analyzed
 data = []
 #with open('import/FIIs.csv', newline='') as f:
-with open('import/list.csv', newline='') as f:
+with open('import/listMy.csv', newline='') as f:
     reader = csv.reader(f)
     for row in reader:
         data.append(row[0])
@@ -20,7 +20,7 @@ for stocks in data:
     # Uses Panda Reader to import all the values from Yahoo API and save
     # IMPORTANT: The          -----> '.SA' <-----   in the next line loads the value for Brazilian stocks, remove this to USA stocks
     df = web.DataReader (str(stocks)+'.SA', 'yahoo', start, end)
-    df.to_csv("export/csv/" + stocks + ".csv")
+    df.to_csv("export/my/csv/" + stocks + ".csv")
     
     # Moving Average vector
     movingAverage = [];         color = [];
@@ -69,5 +69,5 @@ for stocks in data:
     # Display the image
     plt.show()
     
-    fig.savefig("export/img/" + stocks + ".png", dpi = 300)
+    fig.savefig("export/my/img/" + stocks + ".png", dpi = 300)
     plt.close(fig)
